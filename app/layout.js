@@ -19,7 +19,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${outfit.className} antialiased`}>
+      <body className={`${outfit.className} antialiased leading-7 overflow-x-hidden`}>
         {children}
       </body>
     </html>
