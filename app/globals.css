@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Ovo&display=swap');
 @import "tailwindcss"; 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 * {
   font-family: Outfit;
@@ -7,4 +10,21 @@
 
 .font-Ovo {
   font-family: 'Ovo', serif !important;
+}
+
+
+:root {
+  /* --color-primary: #1e3a8a;
+  --color-secondary: #facc15; */
+  --lightHover:#fcf4ff;
+}
+
+.dark {
+  /* --color-primary: #3b82f6;
+  --color-secondary: #fbbf24; */
+}
+
+body {
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
 }
