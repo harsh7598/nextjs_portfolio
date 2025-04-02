@@ -7,7 +7,7 @@ export function ThemeProvider({ children }) {
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
 
-  if (!mounted) return <>{children}</>; // Prevents hydration mismatch
+  if (!mounted) return <>{children}</>;
 
   return <NextThemesProvider attribute="class">{children}</NextThemesProvider>;
 }

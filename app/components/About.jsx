@@ -25,7 +25,7 @@ const About = () => {
           <ul className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl">
             {infoList.map(({ icon, iconDark, title, description }, index) => (
               <li
-                className="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500"
+                className="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-[#f9effd] hover:-translate-y-1 duration-500"
                 style={{
                   transition: "box-shadow 0.5s ease-in-out",
                 }}
