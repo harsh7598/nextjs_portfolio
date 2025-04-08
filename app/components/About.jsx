@@ -1,8 +1,11 @@
 import { assets, infoList, toolsData } from "@/assets/assets";
 import Image from "next/image";
 import React from "react";
+import { useTheme } from "next-themes";
 
 const About = () => {
+  const { theme, setTheme } = useTheme();
+
   return (
     <div id="about" className="w-full px-[12%] py-10 scroll-mt-20">
       <h4 className="text-center mb-2 text-lg font-Ovo">Introduction</h4>
@@ -25,23 +28,41 @@ const About = () => {
           <ul className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl">
             {infoList.map(({ icon, iconDark, title, description }, index) => (
               <li
-                className="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-[#f9effd] hover:-translate-y-1 duration-500"
+                className={`border-[0.5px] rounded-xl p-6 cursor-pointer hover:-translate-y-1 duration-500 
+    ${
+      theme === "dark"
+        ? "border-white hover:shadow-white hover:bg-[#191919]"
+        : "border-gray-400 hover:bg-[#f9effd]"
+    }`}
                 style={{
                   transition: "box-shadow 0.5s ease-in-out",
                 }}
                 onMouseEnter={(e) =>
-                  (e.currentTarget.style.boxShadow = "4px 4px 0 #000")
+                  (e.currentTarget.style.boxShadow =
+                    theme === "dark" ? "3px 3px 0 #fff" : "4px 4px 0 #000")
                 }
                 onMouseLeave={(e) => (e.currentTarget.style.boxShadow = "none")}
                 key={index}
               >
-                <Image src={icon} alt={title} className="w-7 mt-3" />
-                <h3 className="my-4 font-semibold text-gray-700">{title}</h3>
-                <p className="text-gray-600 text-sm">{description}</p>
+                <Image
+                  src={theme === "dark" ? iconDark : icon}
+                  alt={title}
+                  className="w-7 mt-3"
+                />
+                <h3
+                  className={`my-4 font-semibold ${
+                    theme === "dark" ? "text-white" : "text-gray-700"
+                  }`}
+                >
+                  {title}
+                </h3>
+                <p className={`text-sm ${theme === "dark" ? "text-white/80" : "text-gray-600"}`}>
+                  {description}
+                </p>
               </li>
             ))}
           </ul>
-          <h4 className="my-4 text-gray-800 font-Ovo">Tools I use</h4>
+          <h4 className={`my-4 font-Ovo ${theme === "dark" ? "text-white/80" : "text-gray-800"}`}>Tools I use</h4>
           <ul className="grid grid-cols-5 md:grid-cols-8 gap-2">
             {toolsData.map((tool, index) => (
               <li

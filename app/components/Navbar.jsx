@@ -44,10 +44,10 @@ const Navbar = () => {
 
       {/* Navbar */}
       <nav
-  className={`w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50 ${
-    isScroll ? "bg-white/50 backdrop-blur-lg dark:shadow-white/20" : ""
-  }`}
->
+        className={`w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50 ${
+          isScroll ? "bg-white/50 backdrop-blur-lg dark:shadow-white/20" : ""
+        }`}
+      >
         <a href="#top">
           <Image
             src={theme === "dark" ? assets.logo_dark : assets.logo}
@@ -111,7 +111,7 @@ const Navbar = () => {
         <ul
           ref={sideMenuRef}
           className={`flex md:hidden flex-col gap-4 py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen transition duration-500 ${
-            theme === "dark" ? "bg-[#181414]" : "bg-white"
+            theme === "dark" ? "bg-[#191919]" : "bg-white"
           }`}
         >
           <div className="absolute right-6 top-6" onClick={closeMenu}>
