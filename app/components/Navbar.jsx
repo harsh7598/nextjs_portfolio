@@ -44,14 +44,15 @@ const Navbar = () => {
 
       {/* Navbar */}
       <nav
-        className={`w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50 
-        ${isScroll ? "bg-white/50 backdrop-blur-lg dark:bg-[#11001F] dark:shadow-white/20" : ""}`}
-      >
+  className={`w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50 ${
+    isScroll ? "bg-white/50 backdrop-blur-lg dark:shadow-white/20" : ""
+  }`}
+>
         <a href="#top">
           <Image
             src={theme === "dark" ? assets.logo_dark : assets.logo}
             alt="logo"
-            className="w-28 cursor-pointer mr-14"
+            className="w-28 cursor-pointer mr-20"
           />
         </a>
 
@@ -83,21 +84,35 @@ const Navbar = () => {
           <ThemeToggle />
           <a
             href="#contact"
-            className="hidden lg:flex items-center gap-3 px-10 py-2.5 border border-gray-500 rounded-full ml-4 font-Ovo dark:border-white/50"
+            className={`hidden lg:flex items-center gap-3 px-10 py-2.5 border rounded-full ml-4 font-Ovo ${
+              theme === "dark" ? "border-white/50" : "border-gray-500"
+            }`}
           >
-            Contact{" "}
-            <Image src={theme === "dark" ? assets.arrow_icon_dark : assets.arrow_icon} alt="arrow" className="w-3" />
+            Contact
+            <Image
+              src={
+                theme === "dark" ? assets.arrow_icon_dark : assets.arrow_icon
+              }
+              alt="arrow"
+              className="w-3"
+            />
           </a>
 
           <button className="block md:hidden ml-3" onClick={openMenu}>
-            <Image src={theme === "dark" ? assets.menu_white : assets.menu_black} alt="" className="w-6" />
+            <Image
+              src={theme === "dark" ? assets.menu_white : assets.menu_black}
+              alt=""
+              className="w-6"
+            />
           </button>
         </div>
 
         {/* Mobile Menu */}
         <ul
           ref={sideMenuRef}
-          className="flex md:hidden flex-col gap-4 py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen transition duration-500 bg-white dark:bg-[#2a004a] dark:text-white"
+          className={`flex md:hidden flex-col gap-4 py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen transition duration-500 ${
+            theme === "dark" ? "bg-[#181414]" : "bg-white"
+          }`}
         >
           <div className="absolute right-6 top-6" onClick={closeMenu}>
             <Image
