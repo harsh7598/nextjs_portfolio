@@ -31,7 +31,7 @@ const About = () => {
                 className={`border-[0.5px] rounded-xl p-6 cursor-pointer hover:-translate-y-1 duration-500 
     ${
       theme === "dark"
-        ? "border-white hover:shadow-white hover:bg-[#191919]"
+        ? "border-white hover:shadow-white hover:bg-[#3B3B3B]"
         : "border-gray-400 hover:bg-[#f9effd]"
     }`}
                 style={{
