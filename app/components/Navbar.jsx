@@ -52,7 +52,7 @@ const Navbar = () => {
           <Image
             src={theme === "dark" ? assets.logo_dark : assets.logo}
             alt="logo"
-            className="w-28 cursor-pointer mr-20"
+            className="w-28 cursor-pointer mr-14"
           />
         </a>
 
