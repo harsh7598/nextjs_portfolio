@@ -44,15 +44,15 @@ const Navbar = () => {
 
       {/* Navbar */}
       <nav
-        className={`w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50 ${
-          isScroll ? "bg-white/50 backdrop-blur-lg dark:shadow-white/20" : ""
+        className={`w-full fixed px-5 lg:px-8 xl:px-[8%] py-2.5 flex items-center justify-between z-50 ${
+          isScroll ? "bg-white/30 backdrop-blur-lg dark:shadow-white/20" : ""
         }`}
       >
         <a href="#top">
           <Image
             src={theme === "dark" ? assets.logo_dark : assets.logo}
             alt="logo"
-            className="w-28 cursor-pointer mr-14"
+            className="w-28 cursor-pointer mr-20"
           />
         </a>
 

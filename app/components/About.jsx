@@ -1,3 +1,6 @@
+'use client';
+
+import { useRouter } from "next/navigation";
 import { assets, infoList, toolsData } from "@/assets/assets";
 import Image from "next/image";
 import React from "react";
@@ -6,7 +9,7 @@ import { motion } from "motion/react";
 
 const About = () => {
   const { theme, setTheme } = useTheme();
-
+  const router = useRouter();
   return (
     <motion.div
       id="about"
@@ -32,7 +35,7 @@ const About = () => {
         About me
       </motion.h2>
       <motion.div
-        className="flex w-full flex-col lg:flex-row items-center gap-20 my-20"
+        className="flex w-full flex-col lg:flex-row items-center gap-20 mb-20 mt-10"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
@@ -70,21 +73,23 @@ const About = () => {
             {infoList.map(({ icon, iconDark, title, description }, index) => (
               <motion.li
                 whileHover={{ scale: 1.05 }}
-                className={`border-[0.5px] rounded-xl p-6 cursor-pointer hover:-translate-y-1 duration-500 
-    ${
-      theme === "dark"
-        ? "border-white hover:shadow-white hover:bg-[#3B3B3B]"
-        : "border-gray-400 hover:bg-[#f9effd]"
-    }`}
-                style={{
-                  transition: "box-shadow 0.5s ease-in-out",
+                key={index}
+                onClick={() => {
+                  if (title === "Skills") {
+                    router.push("/skills");
+                  }
                 }}
+                className={`border-[0.5px] rounded-xl p-6 cursor-pointer hover:-translate-y-1 duration-500 ${
+                  theme === "dark"
+                    ? "border-white hover:shadow-white hover:bg-[#3B3B3B]"
+                    : "border-gray-400 hover:bg-[#f9effd]"
+                }`}
+                style={{ transition: "box-shadow 0.5s ease-in-out" }}
                 onMouseEnter={(e) =>
                   (e.currentTarget.style.boxShadow =
                     theme === "dark" ? "3px 3px 0 #fff" : "4px 4px 0 #000")
                 }
                 onMouseLeave={(e) => (e.currentTarget.style.boxShadow = "none")}
-                key={index}
               >
                 <Image
                   src={theme === "dark" ? iconDark : icon}
@@ -105,13 +110,17 @@ const About = () => {
                 >
                   {description}
                 </p>
+                <a href="" className="flex items-center gap-2 text-sm mt-5">
+                              Read more{" "}
+                              <Image src={theme === "dark" ? assets.right_arrow_white : assets.right_arrow} alt="" className="w-4" />
+                            </a>
               </motion.li>
             ))}
           </motion.ul>
           <motion.h4
-                    initial={{opacity:0, y:20}}
-    whileInView={{opacity:1, y:0}}
-    transition={{duration:0.5, delay:1.3}}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 1.3 }}
             className={`my-4 font-Ovo ${
               theme === "dark" ? "text-white/80" : "text-gray-800"
             }`}
@@ -119,13 +128,14 @@ const About = () => {
             Tools I use
           </motion.h4>
           <motion.ul
-                    initial={{opacity:0}}
-    whileInView={{opacity:1}}
-    transition={{duration:0.6, delay:1.5}}
-           className="grid grid-cols-5 md:grid-cols-8 gap-2">
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 1.5 }}
+            className="grid grid-cols-5 md:grid-cols-8 gap-2"
+          >
             {toolsData.map((tool, index) => (
               <motion.li
-    whileHover={{scale:1.1}}
+                whileHover={{ scale: 1.1 }}
                 className="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500"
                 key={index}
               >

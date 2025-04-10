@@ -1,11 +1,21 @@
+'use client';
+
 import { assets } from "@/assets/assets";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 
 const Contact = () => {
   const [result, setResult] = useState("");
+  const { theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
 
   const onSubmit = async (event) => {
     event.preventDefault();
@@ -29,8 +39,6 @@ const Contact = () => {
       setResult(data.message);
     }
   };
-
-  const { theme, setTheme } = useTheme();
 
   return (
     <motion.div

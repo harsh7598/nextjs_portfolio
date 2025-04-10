@@ -39,6 +39,17 @@ import twitter from './twitter.png';
 import linkdin from './linkdin.png';
 import github from './github.png';
 import postman from './postman.png';
+import html from './html.png';
+import css from './css.png';
+import javascript from './js.png';
+import tailwind from './tailwind.png';
+import react from './react.png';
+import redux from './redux.png';
+import typescript from './ts.png';
+import next from './next.png';
+import node from './node-js.png';
+import mongo from './mongo.png';
+
 
 export const assets = {
     user_image,
@@ -81,7 +92,17 @@ export const assets = {
     twitter,
     linkdin,
     github,
-    postman
+    postman,
+    html,
+    css,
+    javascript,
+    tailwind,
+    react,
+    redux,
+    typescript,
+    next,
+    node,
+    mongo,
 };
 
 export const workData = [
@@ -115,7 +136,7 @@ export const serviceData = [
 ]
 
 export const infoList = [
-    { icon: assets.code_icon, iconDark: assets.code_icon_dark, title: 'Languages', description: 'JavaScript, React Js, Next Js, Node Js, and more' },
+    { icon: assets.code_icon, iconDark: assets.code_icon_dark, title: 'Skills', description: 'JavaScript, React Js, Next Js, Node Js', },
     { icon: assets.edu_icon, iconDark: assets.edu_icon_dark, title: 'Education', description: 'B.E., PG-Diploma (C-DAC)' },
     { icon: assets.project_icon, iconDark: assets.project_icon_dark, title: 'Projects', description: 'Built more than 5 projects' }
 ];
@@ -123,3 +144,68 @@ export const infoList = [
 export const toolsData = [
     assets.vscode, assets.mongodb, assets.figma, assets.git, assets.firebase, assets.postman, assets.github
 ];
+
+export const SkillData = [
+    {
+      name: "Html 5",
+      Image: assets.html,
+      width: 80,
+      height: 80,
+    },
+    {
+      name: "Css",
+      Image: assets.css,
+      width: 80,
+      height: 80,
+    },
+    {
+      name: "JavaScript",
+      Image: assets.javascript,
+      width: 65,
+      height: 65,
+    },
+    {
+      name: "Tailwind Css",
+      Image: assets.tailwind,
+      width: 80,
+      height: 80,
+    },
+    {
+      name: "React",
+      Image: assets.react,
+      width: 80,
+      height: 80,
+    },
+    {
+      name: "Redux",
+      Image: assets.redux,
+      width: 80,
+      height: 80,
+    },
+  
+    {
+      name: "TypeScript",
+      Image: assets.typescript,
+      width: 80,
+      height: 80,
+    },
+    {
+      name: "Next js 13",
+      Image: assets.next,
+      width: 80,
+      height: 80,
+    },
+  
+    {
+      name: "Node js",
+      Image: assets.node,
+      width: 80,
+      height: 80,
+    },
+    {
+      name: "Mongo db",
+      Image: assets.mongo,
+      width: 40,
+      height: 40,
+    },
+  ];

@@ -69,7 +69,7 @@ const Services = () => {
             </p>
             <a href={link} className="flex items-center gap-2 text-sm mt-5">
               Read more{" "}
-              <Image src={assets.right_arrow} alt="" className="w-4" />
+              <Image src={theme === "dark" ? assets.right_arrow_white : assets.right_arrow} alt="" className="w-4" />
             </a>
           </motion.div>
         ))}
