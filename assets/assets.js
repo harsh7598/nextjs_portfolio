@@ -136,10 +136,29 @@ export const serviceData = [
 ]
 
 export const infoList = [
-    { icon: assets.code_icon, iconDark: assets.code_icon_dark, title: 'Skills', description: 'JavaScript, React Js, Next Js, Node Js', },
-    { icon: assets.edu_icon, iconDark: assets.edu_icon_dark, title: 'Education', description: 'B.E., PG-Diploma (C-DAC)' },
-    { icon: assets.project_icon, iconDark: assets.project_icon_dark, title: 'Projects', description: 'Built more than 5 projects' }
+  {
+    icon: assets.code_icon,
+    iconDark: assets.code_icon_dark,
+    title: 'Skills',
+    description: 'JavaScript, React Js, Next Js, Node Js',
+    link: '/skills',
+  },
+  {
+    icon: assets.edu_icon,
+    iconDark: assets.edu_icon_dark,
+    title: 'Education',
+    description: 'B.E., PG-Diploma (C-DAC)',
+    link: '/education',
+  },
+  {
+    icon: assets.project_icon,
+    iconDark: assets.project_icon_dark,
+    title: 'Projects',
+    description: 'Built more than 5 projects',
+    link: '/projects',
+  },
 ];
+
 
 export const toolsData = [
     assets.vscode, assets.mongodb, assets.figma, assets.git, assets.firebase, assets.postman, assets.github

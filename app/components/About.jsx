@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { useRouter } from "next/navigation";
 import { assets, infoList, toolsData } from "@/assets/assets";
@@ -70,15 +70,11 @@ const About = () => {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 1 }}
           >
-            {infoList.map(({ icon, iconDark, title, description }, index) => (
+            {infoList.map(({ icon, iconDark, title, description, link }, index) => (
               <motion.li
                 whileHover={{ scale: 1.05 }}
                 key={index}
-                onClick={() => {
-                  if (title === "Skills") {
-                    router.push("/skills");
-                  }
-                }}
+                onClick={() => router.push(link)}
                 className={`border-[0.5px] rounded-xl p-6 cursor-pointer hover:-translate-y-1 duration-500 ${
                   theme === "dark"
                     ? "border-white hover:shadow-white hover:bg-[#3B3B3B]"
@@ -111,9 +107,17 @@ const About = () => {
                   {description}
                 </p>
                 <a href="" className="flex items-center gap-2 text-sm mt-5">
-                              Read more{" "}
-                              <Image src={theme === "dark" ? assets.right_arrow_white : assets.right_arrow} alt="" className="w-4" />
-                            </a>
+                  Read more{" "}
+                  <Image
+                    src={
+                      theme === "dark"
+                        ? assets.right_arrow_white
+                        : assets.right_arrow
+                    }
+                    alt=""
+                    className="w-4"
+                  />
+                </a>
               </motion.li>
             ))}
           </motion.ul>

@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { assets } from "@/assets/assets";
 import Image from "next/image";
@@ -49,15 +49,17 @@ const Contact = () => {
   };
 
   const inputClassName = `flex-1 p-3 outline-none border-[0.5px] rounded-md transition-colors duration-200
-    ${theme === "dark" 
-      ? "bg-[#7A7A7A]/30 border-white/90 focus:border-white" 
-      : "bg-white border-gray-400 focus:border-black"
+    ${
+      theme === "dark"
+        ? "bg-[#7A7A7A]/30 border-white/90 focus:border-white"
+        : "bg-white border-gray-400 focus:border-black"
     }`;
 
   const buttonClassName = `py-3 px-8 w-max flex items-center justify-between gap-2 text-white rounded-full mx-auto transition-all duration-300
-    ${theme === "dark"
-      ? "bg-transparent border-[0.5px] border-white hover:bg-[#7A7A7A]"
-      : "bg-black hover:bg-black/80"
+    ${
+      theme === "dark"
+        ? "bg-transparent border-[0.5px] border-white hover:bg-[#7A7A7A]"
+        : "bg-black hover:bg-black/80"
     } ${isSubmitting ? "opacity-70 cursor-not-allowed" : ""}`;
 
   return (
@@ -67,7 +69,11 @@ const Contact = () => {
       transition={{ duration: 1 }}
       id="contact"
       className={`w-full px-6 sm:px-[10%] md:px-[12%] py-16 scroll-mt-20 
-        ${theme === "dark" ? "" : "bg-[url('/footer-bg-color.png')] bg-no-repeat bg-center bg-[length:90%_auto]"}`}
+        ${
+          theme === "dark"
+            ? ""
+            : "bg-[url('/footer-bg-color.png')] bg-no-repeat bg-center bg-[length:90%_auto]"
+        }`}
     >
       <motion.h4
         initial={{ y: -20, opacity: 0 }}
@@ -132,7 +138,7 @@ const Contact = () => {
           rows="6"
           placeholder="Enter your message"
           required
-          className={inputClassName}
+          className={`${inputClassName} w-full`}
           name="message"
           disabled={isSubmitting}
         />
@@ -144,14 +150,16 @@ const Contact = () => {
           className={buttonClassName}
         >
           {isSubmitting ? "Sending..." : "Submit now"}{" "}
-          <Image 
-            src={assets.right_arrow_white} 
-            alt="Submit" 
-            className={`w-4 transition-transform duration-300 ${isSubmitting ? "animate-pulse" : ""}`} 
+          <Image
+            src={assets.right_arrow_white}
+            alt="Submit"
+            className={`w-4 transition-transform duration-300 ${
+              isSubmitting ? "animate-pulse" : ""
+            }`}
           />
         </motion.button>
         {result && (
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             className={`text-center mt-4 ${
