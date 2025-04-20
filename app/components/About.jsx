@@ -72,7 +72,6 @@ const About = () => {
           >
             {infoList.map(({ icon, iconDark, title, description, link }, index) => (
               <motion.li
-                whileHover={{ scale: 1.05 }}
                 key={index}
                 onClick={() => router.push(link)}
                 className={`border-[0.5px] rounded-xl p-6 cursor-pointer hover:-translate-y-1 duration-500 ${

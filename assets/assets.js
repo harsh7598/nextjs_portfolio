@@ -49,6 +49,7 @@ import typescript from './ts.png';
 import next from './next.png';
 import node from './node-js.png';
 import mongo from './mongo.png';
+import portone from './portone.png';
 
 
 export const assets = {
@@ -103,6 +104,7 @@ export const assets = {
     next,
     node,
     mongo,
+    portone,
 };
 
 export const workData = [
@@ -227,4 +229,30 @@ export const SkillData = [
       width: 40,
       height: 40,
     },
+  ];
+
+  export const projectsData = [
+    {
+      title: "Portfolio Website",
+      description:
+        "A modern responsive portfolio built with Next.js and Tailwind CSS",
+      technologies: "Next.js, Tailwind, Framer Motion",
+      image: assets.portone,
+      link: "#",
+    },
+    {
+      title: "E-commerce Platform",
+      description: "Full-featured online store with payment integration",
+      technologies: "React, Node.js, MongoDB",
+      image: "/project2.jpg",
+      link: "#",
+    },
+    {
+      title: "Task Management App",
+      description: "Productivity application with real-time collaboration",
+      technologies: "React, Firebase, Redux",
+      image: "/project3.jpg",
+      link: "#",
+    },
+    // Add more projects as needed
   ];
