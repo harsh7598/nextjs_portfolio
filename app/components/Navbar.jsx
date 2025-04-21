@@ -65,18 +65,31 @@ const Navbar = () => {
               : "bg-white/50 shadow-sm dark:border dark:boder-white/50 dark:bg-transparent"
           }`}
         >
-          {["Home", "About me", "Services", "My Work", "Contact me"].map(
-            (item, index) => (
-              <li key={index}>
-                <a
-                  className="font-Ovo"
-                  href={`#${item.replace(/\s+/g, "").toLowerCase()}`}
-                >
-                  {item}
-                </a>
-              </li>
-            )
-          )}
+          <li>
+            <a className="font-Ovo" href="#top">
+              Home
+            </a>
+          </li>
+          <li>
+            <a className="font-Ovo" href="#about">
+              About me
+            </a>
+          </li>
+          <li>
+            <a className="font-Ovo" href="#services">
+              Services
+            </a>
+          </li>
+          <li>
+            <a className="font-Ovo" href="#work">
+              My Work
+            </a>
+          </li>
+          <li>
+            <a className="font-Ovo" href="#contact">
+              Contact me
+            </a>
+          </li>
         </ul>
 
         {/* Right Section - Dark Mode & Contact */}
@@ -108,33 +121,45 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu */}
-        <ul
+        <ul  onClick={closeMenu}
           ref={sideMenuRef}
           className={`flex md:hidden flex-col gap-4 py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen transition duration-500 ${
             theme === "dark" ? "bg-[#191919]" : "bg-white"
           }`}
         >
-          <div className="absolute right-6 top-6" onClick={closeMenu}>
+          <div className="absolute right-6 top-6">
             <Image
               src={theme === "dark" ? assets.close_white : assets.close_black}
               alt=""
               className="w-5 cursor-pointer"
             />
           </div>
-
-          {["Home", "About me", "Services", "My Work", "Contact me"].map(
-            (item, index) => (
-              <li key={index}>
-                <a
-                  className="font-Ovo"
-                  onClick={closeMenu}
-                  href={`#${item.replace(/\s+/g, "").toLowerCase()}`}
-                >
-                  {item}
-                </a>
-              </li>
-            )
-          )}
+          <li>
+            <a className="font-Ovo" href="#top">
+              Home
+            </a>
+          </li>
+          <li>
+            <a className="font-Ovo" href="#about">
+              About me
+            </a>
+          </li>
+          <li>
+            <a className="font-Ovo" href="#services">
+              Services
+            </a>
+          </li>
+          <li>
+            <a className="font-Ovo" href="#work">
+              My Work
+            </a>
+          </li>
+          <li>
+            <a className="font-Ovo" href="#contact">
+              Contact me
+            </a>
+          </li>
+          
         </ul>
       </nav>
     </>

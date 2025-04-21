@@ -4,10 +4,14 @@ import { useTheme } from "next-themes";
 import Navbar from "../components/Navbar";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { projectsData } from "@/assets/assets";
+import { getProjectsData } from "@/assets/assets";
+import { useState } from "react";
 
 export default function ProjectsPage() {
   const { theme, setTheme } = useTheme();
+  const [showAll, setShowAll] = useState(false);
+  const allProjects = getProjectsData(theme);
+  const displayedProjects = showAll ? allProjects : allProjects.slice(0, 3);
 
   return (
     <>
@@ -15,7 +19,7 @@ export default function ProjectsPage() {
       <div className="min-h-screen w-screen pt-20 md:pt-28">
         <div className="max-w-7xl mx-auto px-1 sm:px-2 lg:px-4">
           <motion.div
-            className="flex flex-col text-center items-center gap-4 mb-12"
+            className="flex flex-col text-center items-center gap-4 mb-6"
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
@@ -44,14 +48,13 @@ export default function ProjectsPage() {
               Showcase of my development work and contributions
             </motion.p>
           </motion.div>
-
           <motion.div
             className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.6 }}
           >
-            {projectsData.map((project, index) => (
+            {displayedProjects.map((project, index) => (
               <motion.div
                 key={index}
                 initial={{ y: 30, opacity: 0 }}
@@ -77,7 +80,7 @@ export default function ProjectsPage() {
                     className="object-cover"
                   />
                 </div>
-                <div className="p-6">
+                <div className="p-4">
                   <h3
                     className={`text-lg font-medium ${
                       theme === "dark" ? "text-white" : "text-gray-800"
@@ -86,18 +89,26 @@ export default function ProjectsPage() {
                     {project.title}
                   </h3>
                   <p
-                    className={`mt-2 ${
+                    className={`mt-1 ${
                       theme === "dark" ? "text-gray-300" : "text-gray-600"
                     }`}
                   >
                     {project.description}
                   </p>
-                  <p className={`mt-3 text-sm ${theme === "dark" ? "text-gray-300" : "text-gray-600"}`}>
+                  <p
+                    className={`mt-1 text-sm font-medium ${
+                      theme === "dark" ? "text-gray-300" : "text-gray-600"
+                    }`}
+                  >
                     {project.technologies}
                   </p>
                   <a
                     href={project.link}
-                    className={`mt-4 inline-block text-sm font-medium ${theme === "dark" ? "text-white hover:text-purple-300" : "text-gray-600 hover:text-purple-300"} transition-colors`}
+                    className={`mt-2 inline-block text-sm font-medium ${
+                      theme === "dark"
+                        ? "text-white hover:text-purple-500"
+                        : "text-gray-600 hover:text-purple-500"
+                    } transition-colors`}
                   >
                     View Project →
                   </a>
@@ -105,8 +116,28 @@ export default function ProjectsPage() {
               </motion.div>
             ))}
           </motion.div>
+
+          {allProjects.length > 3 && (
+            <motion.div
+              className="text-center mt-4"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.8 }}
+            >
+              <button
+                onClick={() => setShowAll(!showAll)}
+                className={`px-4 py-2 rounded-full font-medium transition-colors duration-300 ${
+                  theme === "dark"
+                    ? "bg-white text-black hover:bg-gray-200"
+                    : "bg-black text-white hover:bg-gray-800"
+                }`}
+              >
+                {showAll ? "Show Less" : "Show More"}
+              </button>
+            </motion.div>
+          )}
         </div>
-        <div className="flex justify-between pt-4 px-4 mb-4">
+        <div className="flex justify-between pt-4 md:pt-2 px-4 mb-4">
           <motion.button
             onClick={() => (window.location.href = "/education")}
             className="px-6 py-3 border rounded-full flex items-center gap-2 bg-black text-white dark:bg-white dark:text-black cursor-pointer"
@@ -139,19 +170,19 @@ export default function ProjectsPage() {
           >
             Home
             <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="w-4 h-4"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
-            />
-          </svg>
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="w-4 h-4"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
+              />
+            </svg>
           </motion.button>
         </div>
       </div>
