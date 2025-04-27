@@ -50,6 +50,7 @@ import next from "./next.png";
 import node from "./node-js.png";
 import mongo from "./mongo.png";
 import pro1_1 from "./pro1_1.png";
+import pro2_1 from "./pro2_1.png";
 import pro3_1light from "./pro3_1light.png";
 import pro3_1dark from "./pro3_1dark.png";
 
@@ -106,6 +107,7 @@ export const assets = {
   node,
   mongo,
   pro1_1,
+  pro2_1,
   pro3_1light,
   pro3_1dark,
 };
@@ -271,11 +273,12 @@ export const getProjectsData = (theme) => [
     link: "https://rielverse-dashboard.vercel.app/",
   },
   {
-    title: "Task Management App",
-    description: "Productivity application with real-time collaboration",
-    technologies: "React, Firebase, Redux",
-    image: "/project3.jpg",
-    link: "#",
+    title: "MERN Grocery App",
+    description:
+      "A full-stack grocery management application built with the MERN stack.",
+    technologies: "MongoDB, Express.js, React, Node.js",
+    image: assets.pro2_1,
+    link: "https://github.com/harsh7598/mern_grocery",
   },
   {
     title: "Portfolio Website",
