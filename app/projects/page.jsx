@@ -80,7 +80,7 @@ export default function ProjectsPage() {
                     className="object-cover"
                   />
                 </div>
-                <div className="p-4">
+                <div className={`p-4 ${theme === "dark" ? "" : "bg-purple-100"}`}>
                   <h3
                     className={`text-lg font-medium ${
                       theme === "dark" ? "text-white" : "text-gray-800"
