@@ -51,7 +51,7 @@ const Header = () => {
           <Image src={assets.right_arrow_white} alt="" className="w-4" />
         </motion.a>
         <motion.a
-          href="https://drive.google.com/uc?export=download&id=1_TVCGk0Hkf4Y0K3vPQ8N60118Dk64rk2"
+          href="https://drive.google.com/uc?export=download&id=1F3iw8GAC1OjPxVZUKZw2Hcso_RZ3VwZ8"
           target="_blank"
           rel="noopener noreferrer"
           className="px-10 py-3 border rounded-full border-gray-500 flex items-center gap-2 bg-white dark:text-black"
